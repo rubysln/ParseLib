@@ -3,7 +3,6 @@ package habr;
 import Settings.Parser;
 import Settings.ParserSettings;
 
-import javax.swing.text.Document;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -45,7 +44,7 @@ public class ParserWorker<T> {
         return parser;
     }
 
-    public void setParser(Parser<T> parser) {
+    public void setParser(Parser parser) {
         this.parser = parser;
     }
 
