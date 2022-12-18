@@ -8,7 +8,7 @@ import settings.ParserSettings;
 import java.io.IOException;
 
 public class HabrHtmlLoader implements HtmlLoader {
-    String url;
+    private String url;
 
     public HabrHtmlLoader(ParserSettings settings){
         url = HabrSettings.BASE_URL + "/" + HabrSettings.PREFIX;
