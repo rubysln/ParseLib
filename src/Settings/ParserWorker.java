@@ -1,7 +1,4 @@
-package habr;
-
-import Settings.Parser;
-import Settings.ParserSettings;
+package Settings;
 
 import java.io.IOException;
 import java.util.ArrayList;

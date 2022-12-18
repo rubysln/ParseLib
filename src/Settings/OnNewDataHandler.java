@@ -1,4 +1,4 @@
-package habr;
+package Settings;
 
 
 public interface OnNewDataHandler<T> {

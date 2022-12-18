@@ -1,16 +1,19 @@
-import Settings.Parser;
+import Settings.Completed;
+import Settings.ParserWorker;
 import habr.*;
-import org.jsoup.Jsoup;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) throws IOException {
-        ParserWorker<ArrayList<String>> parser = new ParserWorker<>(new HabraSettings(1, 1));
-        parser.setParser(new HabrParser());
-        parser.getOnCompletedList().add(new Completed());
-        parser.getOnNewDataList().add(new NewData());
-        parser.Start();
+        ParserWorker<ArrayList<String>> habrParser = new ParserWorker<>(new HabrSettings(1, 1));
+        habrParser.setParser(new HabrParser());
+        habrParser.getOnCompletedList().add(new Completed());
+        habrParser.getOnNewDataList().add(new HabrNewData());
+        habrParser.Start();
+        habrParser.Abort();
+        
+
     }
 }

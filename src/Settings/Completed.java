@@ -1,4 +1,4 @@
-package habr;
+package Settings;
 
 public class Completed implements OnCompleted {
 
