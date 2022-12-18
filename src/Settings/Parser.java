@@ -1,6 +1,6 @@
 package Settings;
 
-import javax.swing.text.Document;
+import org.jsoup.nodes.Document;
 
 public interface Parser<T> {
     T Parse(Document document);

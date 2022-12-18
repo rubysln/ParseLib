@@ -15,6 +15,10 @@ public class ParserWorker<T> {
    ArrayList<OnNewDataHandler> onNewDataList = new ArrayList<>();
    ArrayList<OnCompleted> onCompletedList = new ArrayList<>();
 
+    public ParserWorker(ParserSettings parserSettings) {
+        this.parserSettings = parserSettings;
+        this.loader = new HtmlLoader(parserSettings);
+    }
 
     public void Start() throws IOException {
         isActivate = true;
@@ -30,8 +34,7 @@ public class ParserWorker<T> {
                 onCompletedList.get(0).onCompleted(this);
                 return;
             }
-            Document document = loader.getSourceByPageId(i);
-            T result = parser.Parse(document);
+            T result = parser.Parse(loader.getSourceByPageId(i));
             onNewDataList.get(0).onNewData(this, result);
         }
         onCompletedList.get(0).onCompleted(this);
@@ -53,5 +56,13 @@ public class ParserWorker<T> {
     public void setParserSettings(ParserSettings parserSettings) {
         loader = new HtmlLoader(parserSettings);
         this.parserSettings = parserSettings;
+    }
+
+    public ArrayList<OnNewDataHandler> getOnNewDataList() {
+        return onNewDataList;
+    }
+
+    public ArrayList<OnCompleted> getOnCompletedList() {
+        return onCompletedList;
     }
 }

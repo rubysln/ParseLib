@@ -1,9 +1,12 @@
 package habr;
 
-import Settings.Parser;
-
 import java.util.ArrayList;
 
-static class NewData implements ParserWorker.onNewDataHandler<ArrayList<String>> {
-    public void onNewData()
+public class NewData implements OnNewDataHandler<ArrayList<String>> {
+    @Override
+    public void onNewData(Object sender, ArrayList<String> args){
+        for(String s : args){
+            System.out.println(s);
+        }
+    }
 }
