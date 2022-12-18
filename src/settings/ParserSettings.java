@@ -1,4 +1,4 @@
-package Settings;
+package settings;
 
 public abstract class ParserSettings {
     public static String BASE_URL;

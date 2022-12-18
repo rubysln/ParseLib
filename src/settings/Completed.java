@@ -1,4 +1,4 @@
-package Settings;
+package settings;
 
 public class Completed implements OnCompleted {
 

@@ -1,6 +1,6 @@
 package habr;
 
-import Settings.OnNewDataHandler;
+import settings.OnNewDataHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;

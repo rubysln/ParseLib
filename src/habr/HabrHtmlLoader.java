@@ -1,14 +1,16 @@
-package Settings;
+package habr;
 
 import habr.HabrSettings;
 import org.jsoup.Jsoup;
+import settings.HtmlLoader;
+import settings.ParserSettings;
 
 import java.io.IOException;
 
-public class HtmlLoader {
+public class HabrHtmlLoader implements HtmlLoader {
     String url;
 
-    public HtmlLoader(ParserSettings settings){
+    public HabrHtmlLoader(ParserSettings settings){
         url = HabrSettings.BASE_URL + "/" + HabrSettings.PREFIX;
     }
 

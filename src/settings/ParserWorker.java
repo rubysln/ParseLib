@@ -1,4 +1,6 @@
-package Settings;
+package settings;
+
+import habr.HabrHtmlLoader;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,9 +13,12 @@ public class ParserWorker<T> {
    ArrayList<OnNewDataHandler> onNewDataList = new ArrayList<>();
    ArrayList<OnCompleted> onCompletedList = new ArrayList<>();
 
+    public void setLoader(HtmlLoader loader) {
+        this.loader = loader;
+    }
+
     public ParserWorker(ParserSettings parserSettings) {
         this.parserSettings = parserSettings;
-        this.loader = new HtmlLoader(parserSettings);
     }
 
     public void Start() throws IOException {
@@ -50,7 +55,7 @@ public class ParserWorker<T> {
     }
 
     public void setParserSettings(ParserSettings parserSettings) {
-        loader = new HtmlLoader(parserSettings);
+        loader = new HabrHtmlLoader(parserSettings);
         this.parserSettings = parserSettings;
     }
 

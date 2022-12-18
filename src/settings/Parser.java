@@ -1,4 +1,4 @@
-package Settings;
+package settings;
 
 import org.jsoup.nodes.Document;
 

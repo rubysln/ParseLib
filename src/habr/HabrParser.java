@@ -1,6 +1,6 @@
 package habr;
 
-import Settings.Parser;
+import settings.Parser;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
@@ -56,6 +56,6 @@ public class HabrParser implements Parser<HashMap<String, ArrayList<String>>> {
 
         os.close();
 
-        System.out.println("Saved!");
+        System.out.println("Downloading picture...");
     }
 }

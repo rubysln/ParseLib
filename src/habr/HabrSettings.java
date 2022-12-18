@@ -1,5 +1,5 @@
 package habr;
-import Settings.ParserSettings;
+import settings.ParserSettings;
 
 public class HabrSettings extends ParserSettings {
     public HabrSettings(int start, int end){
